@@ -1,0 +1,29 @@
+module shift_load_register(clk,rst,inputval,load,dir,loadval,outputval);
+
+input clk;
+input rst;
+input inputval;
+input load;
+input dir;
+input[2:0] loadval;
+output[2:0] outputval;
+
+wire[2:0] dff; 
+wire[2:0] dffInput;
+wire[2:0] outs;
+
+multiplexer RL0(outs[1],inputval,dir,dff[0]);
+multiplexer RL1(outs[2],outs[0],dir,dff[1]);
+multiplexer RL2(input,outs[1],dir,dff[2]);
+
+multiplexer ML0(dff[0],loadval[0],load,dffinput[0]);
+multiplexer ML1(dff[1],loadval[1],load,dffinput[1]);
+multiplexer ML2(dff[2],loadval[2],load,dffinput[2]);
+
+DFlipFlop D0(clk,rst,dffinput[0],outs[0]);
+DFlipFlop D1(clk,rst,dffinput[1],outs[1]);
+DFlipFlop D2(clk,rst,dffinput[2],outs[2]);
+
+assign outputval = outs;
+
+endmodule;
