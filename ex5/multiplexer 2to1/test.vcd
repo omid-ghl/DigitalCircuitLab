@@ -1,0 +1,45 @@
+$date
+	Sat May  8 09:58:08 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_mux $end
+$var wire 1 ! Data_out $end
+$var reg 1 " Data_in_0 $end
+$var reg 1 # Data_in_1 $end
+$var reg 1 $ sel $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+0"
+0!
+$end
+#100
+1$
+#200
+0$
+1#
+#300
+1!
+1$
+#400
+0$
+0#
+1"
+#500
+0!
+1$
+#600
+1!
+0$
+1#
+#700
+1$
+#800
